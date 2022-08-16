@@ -8,6 +8,7 @@ const cors = require("cors");
 
 const notesRoute = require("./routes/notes");
 const usersRoute = require("./routes/users");
+const newUserRoute = require("./routes/newUser")
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use('/api/newUser',newUserRoute);
 app.use('/api/notes',notesRoute);
 app.use('/api/users',usersRoute);
 

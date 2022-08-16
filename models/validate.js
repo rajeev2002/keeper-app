@@ -1,31 +1,21 @@
 const joi = require("joi");
 
 const registerValidationSchema = joi.object({
-    
-    username: joi.string()
-    .min(6)
-    .required(),
+  id: joi.string(),
 
-    email: joi.string()
-    .min(6)
-    .required()
-    .email(),
+  username: joi.string().min(6).required(),
 
-    password: joi.string()
-    .min(6)
-    .required()
+  email: joi.string().min(6).required().email(),
+
+  password: joi.string().min(6).required(),
 });
 
 const loginValidationSchema = joi.object({
-   
-    email: joi.string()
-    .min(6)
-    .required()
-    .email(),
+  id: joi.string(),
 
-    password: joi.string()
-    .min(6)
-    .required()
+  email: joi.string().min(6).required().email(),
+
+  password: joi.string().min(6).required(),
 });
 
-module.exports = {registerValidationSchema,loginValidationSchema};
+module.exports = { registerValidationSchema, loginValidationSchema };
